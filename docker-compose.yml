@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:15
+    container_name: quiz-db
+    restart: always
+    environment:
+      TZ: Asia/Ho_Chi_Minh
+      POSTGRES_DB: quiz_system
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./database:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./quiz-kot-backend/quizkot
+    container_name: quiz-backend
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+    # environment:
+      TZ: Asia/Ho_Chi_Minh
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/quiz_system
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 123456
+      JWT_SECRET: mysecret
+    restart: always
+
+  frontend:
+    build: ./quiz-kot-frontend
+    container_name: quiz-frontend
+    depends_on:
+      - backend 
+    ports:
+      - "3000:3000"
+    restart: always
+
+volumes:
+  pgdata:
