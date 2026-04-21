@@ -1,0 +1,416 @@
+{
+  "id": "quiz-python-intern",
+  "title": "Python Intern Level Quiz",
+  "description": "Practice Python basics to intermediate concepts",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Which data type is immutable in Python?",
+      "type": "multiple-choice",
+      "options": ["list", "dict", "set", "tuple"],
+      "correctAnswerIndex": 3,
+      "explanation": "Tuple is immutable."
+    },
+    {
+      "id": "q2",
+      "text": "What is the result of len('hello')?",
+      "type": "multiple-choice",
+      "options": ["4", "5", "6", "Error"],
+      "correctAnswerIndex": 1,
+      "explanation": "The string has 5 characters."
+    },
+    {
+      "id": "q3",
+      "text": "Which operator is used to get the remainder?",
+      "type": "multiple-choice",
+      "options": ["//", "%", "/", "**"],
+      "correctAnswerIndex": 1,
+      "explanation": "% is the modulo operator."
+    },
+    {
+      "id": "q4",
+      "text": "What does print(type(10)) return?",
+      "type": "multiple-choice",
+      "options": ["int", "<class 'int'>", "number", "integer"],
+      "correctAnswerIndex": 1,
+      "explanation": "Python shows the class type."
+    },
+    {
+      "id": "q5",
+      "text": "Can a list contain different data types?",
+      "type": "multiple-choice",
+      "options": ["Yes", "No"],
+      "correctAnswerIndex": 0,
+      "explanation": "Lists can store multiple data types."
+    },
+    {
+      "id": "q6",
+      "text": "Which function converts a string to an integer?",
+      "type": "multiple-choice",
+      "options": ["str()", "int()", "float()", "input()"],
+      "correctAnswerIndex": 1,
+      "explanation": "int() converts string to integer."
+    },
+    {
+      "id": "q7",
+      "text": "How many numbers does range(5) generate?",
+      "type": "multiple-choice",
+      "options": ["4", "5", "6", "Error"],
+      "correctAnswerIndex": 1,
+      "explanation": "It generates 0 to 4."
+    },
+    {
+      "id": "q8",
+      "text": "What does the == operator do?",
+      "type": "multiple-choice",
+      "options": ["Assign value", "Compare values", "Add", "Subtract"],
+      "correctAnswerIndex": 1,
+      "explanation": "It compares values."
+    },
+    {
+      "id": "q9",
+      "text": "What is 'if x > 5:'?",
+      "type": "multiple-choice",
+      "options": ["Loop", "Condition", "Function", "Variable"],
+      "correctAnswerIndex": 1,
+      "explanation": "It is a conditional statement."
+    },
+    {
+      "id": "q10",
+      "text": "What type does input() return?",
+      "type": "multiple-choice",
+      "options": ["int", "float", "str", "bool"],
+      "correctAnswerIndex": 2,
+      "explanation": "input() always returns a string."
+    },
+
+    {
+      "id": "q11",
+      "text": "append() is used with which type?",
+      "type": "multiple-choice",
+      "options": ["list", "tuple", "int", "string"],
+      "correctAnswerIndex": 0,
+      "explanation": "append() adds an item to a list."
+    },
+    {
+      "id": "q12",
+      "text": "What is len([1,2,3])?",
+      "type": "multiple-choice",
+      "options": ["2", "3", "4", "1"],
+      "correctAnswerIndex": 1,
+      "explanation": "There are 3 elements."
+    },
+    {
+      "id": "q13",
+      "text": "What is a dictionary used for?",
+      "type": "multiple-choice",
+      "options": ["Store key-value pairs", "Store lists", "Math operations", "Looping"],
+      "correctAnswerIndex": 0,
+      "explanation": "Dictionaries store key-value pairs."
+    },
+    {
+      "id": "q14",
+      "text": "What is True and False?",
+      "type": "multiple-choice",
+      "options": ["True", "False"],
+      "correctAnswerIndex": 1,
+      "explanation": "Both must be True for 'and'."
+    },
+    {
+      "id": "q15",
+      "text": "What is False or True?",
+      "type": "multiple-choice",
+      "options": ["True", "False"],
+      "correctAnswerIndex": 0,
+      "explanation": "Only one needs to be True."
+    },
+
+    {
+      "id": "q16",
+      "text": "How many times does for i in range(3) run?",
+      "type": "multiple-choice",
+      "options": ["2", "3", "4", "1"],
+      "correctAnswerIndex": 1,
+      "explanation": "It runs 3 times."
+    },
+    {
+      "id": "q17",
+      "text": "What does break do?",
+      "type": "multiple-choice",
+      "options": ["Exit loop", "Continue", "Print", "Error"],
+      "correctAnswerIndex": 0,
+      "explanation": "It exits the loop."
+    },
+    {
+      "id": "q18",
+      "text": "What does continue do?",
+      "type": "multiple-choice",
+      "options": ["Skip iteration", "Exit", "Print", "Error"],
+      "correctAnswerIndex": 0,
+      "explanation": "It skips current iteration."
+    },
+    {
+      "id": "q19",
+      "text": "What does def do?",
+      "type": "multiple-choice",
+      "options": ["Create variable", "Define function", "Loop", "Compare"],
+      "correctAnswerIndex": 1,
+      "explanation": "It defines a function."
+    },
+    {
+      "id": "q20",
+      "text": "What does return do?",
+      "type": "multiple-choice",
+      "options": ["Print", "Exit", "Return value", "Loop"],
+      "correctAnswerIndex": 2,
+      "explanation": "It returns a value."
+    },
+
+    {
+      "id": "q21",
+      "text": "What is a lambda function?",
+      "type": "multiple-choice",
+      "options": ["Anonymous function", "Variable", "Loop", "Class"],
+      "correctAnswerIndex": 0,
+      "explanation": "Lambda is an anonymous function."
+    },
+    {
+      "id": "q22",
+      "text": "What does map() do?",
+      "type": "multiple-choice",
+      "options": ["Apply function", "Print", "Sort", "Filter"],
+      "correctAnswerIndex": 0,
+      "explanation": "Applies a function to all items."
+    },
+    {
+      "id": "q23",
+      "text": "What does filter() do?",
+      "type": "multiple-choice",
+      "options": ["Filter elements", "Sort", "Add", "Print"],
+      "correctAnswerIndex": 0,
+      "explanation": "Filters elements based on condition."
+    },
+    {
+      "id": "q24",
+      "text": "What does sorted() return?",
+      "type": "multiple-choice",
+      "options": ["New list", "None", "int", "str"],
+      "correctAnswerIndex": 0,
+      "explanation": "Returns a sorted list."
+    },
+    {
+      "id": "q25",
+      "text": "Does a set allow duplicate values?",
+      "type": "multiple-choice",
+      "options": ["Yes", "No"],
+      "correctAnswerIndex": 1,
+      "explanation": "Sets do not allow duplicates."
+    },
+
+    {
+      "id": "q26",
+      "text": "What is try/except used for?",
+      "type": "multiple-choice",
+      "options": ["Error handling", "Loop", "Compare", "Print"],
+      "correctAnswerIndex": 0,
+      "explanation": "It handles exceptions."
+    },
+    {
+      "id": "q27",
+      "text": "What does open() do?",
+      "type": "multiple-choice",
+      "options": ["Open file", "Close file", "Delete file", "Create class"],
+      "correctAnswerIndex": 0,
+      "explanation": "It opens a file."
+    },
+    {
+      "id": "q28",
+      "text": "What does read() do?",
+      "type": "multiple-choice",
+      "options": ["Read file", "Write file", "Delete", "Sort"],
+      "correctAnswerIndex": 0,
+      "explanation": "Reads file content."
+    },
+    {
+      "id": "q29",
+      "text": "What does write() do?",
+      "type": "multiple-choice",
+      "options": ["Write file", "Read", "Sort", "Loop"],
+      "correctAnswerIndex": 0,
+      "explanation": "Writes to file."
+    },
+    {
+      "id": "q30",
+      "text": "What is class used for?",
+      "type": "multiple-choice",
+      "options": ["OOP", "Loop", "Compare", "Print"],
+      "correctAnswerIndex": 0,
+      "explanation": "Used in object-oriented programming."
+    },
+
+    {
+      "id": "q31",
+      "text": "What is self?",
+      "type": "multiple-choice",
+      "options": ["Instance", "Class", "Loop", "None"],
+      "correctAnswerIndex": 0,
+      "explanation": "Refers to the instance."
+    },
+    {
+      "id": "q32",
+      "text": "What is __init__?",
+      "type": "multiple-choice",
+      "options": ["Constructor", "Destructor", "Loop", "Sort"],
+      "correctAnswerIndex": 0,
+      "explanation": "Constructor method."
+    },
+    {
+      "id": "q33",
+      "text": "What does import do?",
+      "type": "multiple-choice",
+      "options": ["Import module", "Export", "Loop", "Compare"],
+      "correctAnswerIndex": 0,
+      "explanation": "Imports modules."
+    },
+    {
+      "id": "q34",
+      "text": "What is math.sqrt(16)?",
+      "type": "multiple-choice",
+      "options": ["2", "4", "8", "16"],
+      "correctAnswerIndex": 1,
+      "explanation": "Square root of 16 is 4."
+    },
+    {
+      "id": "q35",
+      "text": "What does random.randint(1,3) return?",
+      "type": "multiple-choice",
+      "options": ["1 to 3", "0 to 3", "1 to 2", "Error"],
+      "correctAnswerIndex": 0,
+      "explanation": "Inclusive of both 1 and 3."
+    },
+
+    {
+      "id": "q36",
+      "text": "What is list comprehension?",
+      "type": "multiple-choice",
+      "options": ["Quick list creation", "Loop", "Class", "Sort"],
+      "correctAnswerIndex": 0,
+      "explanation": "Compact way to create lists."
+    },
+    {
+      "id": "q37",
+      "text": "What is [x for x in range(3)]?",
+      "type": "multiple-choice",
+      "options": ["[0,1,2]", "[1,2,3]", "[0,1,2,3]", "[]"],
+      "correctAnswerIndex": 0,
+      "explanation": "Range(3) gives 0,1,2."
+    },
+    {
+      "id": "q38",
+      "text": "What does zip() do?",
+      "type": "multiple-choice",
+      "options": ["Combine iterables", "Sort", "Filter", "Map"],
+      "correctAnswerIndex": 0,
+      "explanation": "Combines multiple iterables."
+    },
+    {
+      "id": "q39",
+      "text": "What does enumerate() return?",
+      "type": "multiple-choice",
+      "options": ["index and value", "value only", "index only", "None"],
+      "correctAnswerIndex": 0,
+      "explanation": "Returns index and value."
+    },
+    {
+      "id": "q40",
+      "text": "What does pass do?",
+      "type": "multiple-choice",
+      "options": ["Do nothing", "Exit", "Loop", "Error"],
+      "correctAnswerIndex": 0,
+      "explanation": "Placeholder statement."
+    },
+
+    {
+      "id": "q41",
+      "text": "What does 'is' do?",
+      "type": "multiple-choice",
+      "options": ["Compare identity", "Compare value"],
+      "correctAnswerIndex": 0,
+      "explanation": "Compares object identity."
+    },
+    {
+      "id": "q42",
+      "text": "What does '==' do?",
+      "type": "multiple-choice",
+      "options": ["Compare value", "Compare identity"],
+      "correctAnswerIndex": 0,
+      "explanation": "Compares values."
+    },
+    {
+      "id": "q43",
+      "text": "What is None?",
+      "type": "multiple-choice",
+      "options": ["No value", "0", "False", "Null"],
+      "correctAnswerIndex": 0,
+      "explanation": "Represents absence of value."
+    },
+    {
+      "id": "q44",
+      "text": "What is bool(0)?",
+      "type": "multiple-choice",
+      "options": ["True", "False"],
+      "correctAnswerIndex": 1,
+      "explanation": "0 is False."
+    },
+    {
+      "id": "q45",
+      "text": "What is bool('')?",
+      "type": "multiple-choice",
+      "options": ["True", "False"],
+      "correctAnswerIndex": 1,
+      "explanation": "Empty string is False."
+    },
+
+    {
+      "id": "q46",
+      "text": "What is len({})?",
+      "type": "multiple-choice",
+      "options": ["0", "1", "Error", "None"],
+      "correctAnswerIndex": 0,
+      "explanation": "Empty dictionary has length 0."
+    },
+    {
+      "id": "q47",
+      "text": "What is type([])?",
+      "type": "multiple-choice",
+      "options": ["list", "<class 'list'>", "array", "object"],
+      "correctAnswerIndex": 1,
+      "explanation": "Python returns class type."
+    },
+    {
+      "id": "q48",
+      "text": "a = [1,2]; b = a; b.append(3); what is a?",
+      "type": "multiple-choice",
+      "options": ["[1,2]", "[1,2,3]", "Error", "None"],
+      "correctAnswerIndex": 1,
+      "explanation": "Both reference same list."
+    },
+    {
+      "id": "q49",
+      "text": "What does deepcopy do?",
+      "type": "multiple-choice",
+      "options": ["Deep copy", "Shallow copy", "Sort", "Filter"],
+      "correctAnswerIndex": 0,
+      "explanation": "Creates independent copy."
+    },
+    {
+      "id": "q50",
+      "text": "What is pip used for?",
+      "type": "multiple-choice",
+      "options": ["Install packages", "Run code", "Compile", "Debug"],
+      "correctAnswerIndex": 0,
+      "explanation": "Package manager for Python."
+    }
+  ]
+}

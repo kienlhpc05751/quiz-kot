@@ -1,0 +1,73 @@
+quiz-system/
+│
+├── backend/          # Spring Boot
+├── frontend/         # Next.js
+├── database/         # SQL + migration
+├── docker/           # docker config
+├── .github/          # CI/CD
+├── docker-compose.yml
+└── README.md
+
+2. BACKEND (Spring Boot)
+backend/
+│
+├── src/main/java/com/quiz/
+│   ├── config/          # security, cors, jwt
+│   ├── controller/      # REST API
+│   ├── dto/             # request/response
+│   ├── entity/          # JPA entities
+│   ├── repository/      # JPA repository
+│   ├── service/         # business logic
+│   ├── security/        # JWT, filter
+│   └── QuizApplication.java
+│
+├── src/main/resources/
+│   ├── application.yml
+│   └── data.sql
+│
+├── pom.xml
+└── Dockerfile
+
+
+Security
+JWT login/register
+Filter:
+AuthFilter → check token → set user
+
+3. FRONTEND (Next.js)
+frontend/
+│
+├── app/ (hoặc pages/)
+│   ├── login/
+│   ├── register/
+│   ├── quizzes/
+│   ├── quiz/[id]/
+│   └── dashboard/
+│
+├── components/
+│   ├── QuizCard.tsx
+│   ├── Question.tsx
+│   ├── Navbar.tsx
+│   └── Layout.tsx
+│
+├── services/
+│   └── api.ts   # gọi backend
+│
+├── hooks/
+│   └── useAuth.ts
+│
+├── store/       # zustand / redux
+│
+├── utils/
+│   └── token.ts
+│
+├── styles/
+├── package.json
+└── Dockerfile
+
+
+database/
+│
+├── schema.sql
+├── seed.sql
+└── migrations/   # nếu dùng Flyway

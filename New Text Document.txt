@@ -1,0 +1,1 @@
+Nếu muốn, mình có thể làm tiếp 1 bước nữa: thêm menu đổi theme cụ thể giữa light, night, và dracula thay vì chỉ toggle sáng/tối
