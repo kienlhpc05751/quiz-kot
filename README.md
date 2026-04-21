@@ -1,294 +1,173 @@
-# 🚀 Quiz-KOT – Fullstack Quiz System
+# Quiz-KOT
 
-## 📌 Overview
+Quiz-KOT là một monorepo cho hệ thống tạo và làm bài quiz. Repo hiện tại gồm backend Spring Boot, frontend Next.js và PostgreSQL, kèm cấu hình Docker Compose để chạy toàn bộ stack.
 
-**Quiz-KOT** là hệ thống tạo và làm bài quiz gồm:
+## Tổng quan
 
-* 🧠 Backend: Spring Boot (REST API + Authentication + Business logic)
-* 🎨 Frontend: React (UI + Quiz interaction)
-* 🗄️ Database: PostgreSQL / MySQL (tuỳ config)
+- Backend: Spring Boot 4, Java 21, JPA/Hibernate, Spring Security
+- Frontend: Next.js 16, React 19, TypeScript
+- Database: PostgreSQL 15
+- Orchestration: Docker Compose
 
-Mục tiêu:
+## Cấu trúc repo
 
-* Quản lý quiz, câu hỏi, người dùng
-* Làm bài quiz theo thời gian thực
-* Áp dụng JWT authentication + role-based authorization
-
----
-
-## 🏗️ Project Structure
-
-```
+```text
 quiz-kot/
-│
-├── backend/              # Spring Boot API
-├── frontend/             # React App
-├── database/             # SQL schema + seed data
-├── docs/                 # ERD, API docs
-├── pythonquiz.json       # Sample quiz data
-├── README.md
-└── .gitignore
+├── database/
+│   ├── 01-schema..sql
+│   └── 02-data.sql
+├── quiz-kot-backend/
+│   └── quizkot/
+│       ├── pom.xml
+│       ├── Dockerfile
+│       └── src/
+├── quiz-kot-frontend/
+│   ├── package.json
+│   ├── Dockerfile
+│   └── app/
+├── docker-compose.yml
+└── README.md
 ```
 
----
+## Tính năng chính
 
-## ⚙️ Tech Stack
+- Đăng ký và đăng nhập người dùng
+- Danh sách quiz và chi tiết quiz
+- Tạo, sửa, quản lý quiz ở phía backend
+- Làm bài quiz, lưu kết quả và xem summary
+- Dashboard, share quiz và invite flow
+
+## Công nghệ
 
 ### Backend
 
-* Java 17+
-* Spring Boot
-* Spring Security + JWT
-* JPA / Hibernate
-* Redis (optional)
-* PostgreSQL / MySQL
+- Java 21
+- Spring Boot 4.0.5
+- Spring Data JPA
+- Spring Security
+- PostgreSQL driver
+- Lombok
 
 ### Frontend
 
-* ReactJS
-* Axios
-* Tailwind CSS
-* React Router
+- Next.js 16.2.4
+- React 19.2.4
+- TypeScript
+- Tailwind CSS 4
 
----
+## Chạy bằng Docker
 
-## 🔑 Features
+Đây là cách chạy khuyến nghị.
 
-### 👤 Authentication
+### Yêu cầu
 
-* Đăng ký / đăng nhập
-* JWT token
-* Role-based (ADMIN / USER)
+- Docker
+- Docker Compose
 
-### 🧠 Quiz System
-
-* Tạo quiz
-* Làm quiz theo thời gian
-* Submit & chấm điểm
-* Random câu hỏi (optional)
-
-### 📊 Admin
-
-* Quản lý user
-* CRUD quiz
-* Phân quyền
-
----
-
-## 🛠️ Setup & Run
-
-## 1️⃣ Clone project
+### Khởi động
 
 ```bash
-git clone https://github.com/your-username/quiz-kot.git
-cd quiz-kot
+docker compose up --build
 ```
 
----
+Sau khi chạy xong:
 
-## 2️⃣ Backend (Spring Boot)
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8080
+- PostgreSQL: localhost:5433
 
-### 📁 Di chuyển
+### Dừng stack
 
 ```bash
-cd backend
+docker compose down
 ```
 
-### ⚙️ Config `application.properties`
-
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/quiz_system
-spring.datasource.username=your_user
-spring.datasource.password=your_password
-
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
-jwt.secret=your_secret_key
-jwt.expiration=86400000
-```
-
-### ▶️ Run
+### Xoá luôn dữ liệu database
 
 ```bash
+docker compose down -v
+```
+
+## Chạy local không dùng Docker
+
+### Backend
+
+```bash
+cd quiz-kot-backend/quizkot
 ./mvnw spring-boot:run
 ```
 
-👉 API chạy tại:
+Backend dùng cấu hình trong [application.properties](quiz-kot-backend/quizkot/src/main/resources/application.properties).
 
-```
-http://localhost:8080
-```
-
----
-
-## 3️⃣ Frontend (React)
-
-### 📁 Di chuyển
+Các biến môi trường hỗ trợ:
 
 ```bash
-cd frontend
-```
-
-### 📦 Install
-
-```bash
-npm install
-```
-
-### ▶️ Run
-
-```bash
-npm start
-```
-
-👉 App chạy tại:
-
-```
-http://localhost:3000
-```
-
----
-
-## 4️⃣ Database
-
-### 📁 Thư mục
-
-```
-/database
-```
-
-### 📌 Bao gồm:
-
-* Schema SQL
-* Sample data
-* Seed quiz
-
-👉 Import:
-
-```bash
-psql -U postgres -d quiz_system -f database/schema.sql
-```
-
----
-
-## 🔌 API Example
-
-### Login
-
-```http
-POST /api/auth/login
-```
-
-### Response
-
-```json
-{
-  "token": "jwt_token_here",
-  "roles": ["USER"]
-}
-```
-
----
-
-### Get Quiz
-
-```http
-GET /api/quizzes/{id}
-```
-
----
-
-## 📦 Environment Variables
-
-### Backend
-
-```
-DB_URL=
-DB_USER=
-DB_PASS=
-JWT_SECRET=
+SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/quiz_system
+SPRING_DATASOURCE_USERNAME=postgres
+SPRING_DATASOURCE_PASSWORD=your_password
 ```
 
 ### Frontend
 
+```bash
+cd quiz-kot-frontend
+npm install
+npm run dev
 ```
-REACT_APP_API_URL=http://localhost:8080
-```
 
----
-
-## 🧪 Testing
-
-Backend:
+Frontend dùng biến môi trường:
 
 ```bash
-mvn test
+NEXT_PUBLIC_API_URL=http://localhost:8080/api
 ```
 
-Frontend:
+## Database
+
+Thư mục [database](database) chứa SQL schema và data seed cho PostgreSQL.
+
+Trong Docker Compose, các file trong thư mục này được mount vào container Postgres để tự khởi tạo database khi volume còn trống.
+
+## API chính
+
+Theo backend hiện tại, các nhóm endpoint chính gồm:
+
+- `/api/auth/login`
+- `/api/auth/register`
+- `/api/quizzes`
+- `/api/quizzes/{id}`
+- `/api/quizzes/{id}/questions`
+- `/api/quizzes/{id}/attempts`
+- `/api/quizzes/{id}/attempts/me`
+- `/api/quizzes/{id}/share`
+- `/api/quizzes/{id}/invites`
+- `/api/dashboard/summary`
+- `/api/dashboard/activity`
+- `/api/users`
+
+## Docker files
+
+- Backend image: [quiz-kot-backend/quizkot/Dockerfile](quiz-kot-backend/quizkot/Dockerfile)
+- Frontend image: [quiz-kot-frontend/Dockerfile](quiz-kot-frontend/Dockerfile)
+- Compose stack: [docker-compose.yml](docker-compose.yml)
+
+## Ghi chú cấu hình
+
+- Backend đọc datasource từ biến môi trường và có giá trị mặc định cho chạy local.
+- Frontend build theo kiểu Next.js standalone, nên container chạy trên cổng 3000.
+- Compose hiện publish PostgreSQL ra cổng 5433 trên máy host để tránh đụng cổng 5432 nếu máy đã có PostgreSQL local.
+
+## Kiểm thử
 
 ```bash
-npm test
+cd quiz-kot-backend/quizkot
+./mvnw test
 ```
 
----
+```bash
+cd quiz-kot-frontend
+npm run lint
+```
 
-## 🚀 Deployment (Future)
+## Tác giả
 
-* Backend: Docker / VPS
-* Frontend: Vercel / Netlify
-* Database: Cloud PostgreSQL
-* CI/CD: GitHub Actions
-
----
-
-## 📚 Documentation
-
-📁 `/docs`
-
-* ERD Diagram
-* API Spec
-* Flow system
-
----
-
-## 🧠 Roadmap
-
-* [ ] Timer toàn bài quiz
-* [ ] Realtime (WebSocket)
-* [ ] Leaderboard
-* [ ] AI generate câu hỏi
-* [ ] Mobile responsive UI
-
----
-
-## 🤝 Contributing
-
-1. Fork repo
-2. Create branch: `feature/your-feature`
-3. Commit
-4. Push & Pull Request
-
----
-
-## 📄 License
-
-MIT License
-
----
-
-## 👨‍💻 Author
-
-**Le Hoang Kien**
-
----
-
-## 💡 Notes
-
-* Đây là project học tập + portfolio
-* Có thể mở rộng thành SaaS Quiz Platform
-
----
-
-🔥 *If you find this useful, give it a ⭐ on GitHub!*
+Le Hoang Kien
